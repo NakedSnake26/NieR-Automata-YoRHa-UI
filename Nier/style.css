@@ -1,0 +1,188 @@
+@charset "UTF-8";
+*:focus {
+  outline: none !important;
+}
+
+html
+{
+  /* cursor: url('https://i.imgur.com/i0bm1fb.png'), auto; */
+  cursor: url('nier.png'), auto;
+}
+
+body {
+  background-color:  #cdc8b0; 
+  background-size: 6px 6px;
+  background-image: linear-gradient(90deg, transparent, transparent 5px, rgba(0, 0, 0, 0.07) 6px), linear-gradient(transparent, transparent 5px, rgba(0, 0, 0, 0.07) 6px);
+  color: #4D493E;
+  font-family: "Noto Sans", sans-serif;
+  font-weight: 300;
+  margin: 0;
+  /* min-height: 100vh; */
+  /* box-shadow: inset 0 0 150px rgba(77, 73, 62, 0.4), inset 0 0 150px rgba(77, 73, 62, 0.3); */
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  letter-spacing: 0.1rem;
+  /* border: 2px solid red; */
+}
+
+.test3 {
+  text-align: center;
+  margin: 20% auto;
+}
+.button {
+  position: relative;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(90deg, rgba(72, 70, 61, 0.25) 0%, rgba(72, 70, 61, 0.25) 50%, #48463d 50%, #48463d 100%);
+  background-size: 200%;
+  color: #48463d;
+  border: none;
+  border-top: transparent 3px solid;
+  border-bottom: transparent 3px solid;
+  padding: 8px 8px 7px;
+  line-height: 1;
+  cursor: pointer;
+  text-align: left;
+  transition: background 0.15s ease-in-out, border-color 0.15s ease-in-out, color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+.button-label {
+  display: inline-block;
+}
+.button-label:before {
+  content: "";
+  display: inline-block;
+  height: 16px;
+  width: 16px;
+  background: #48463d;
+  margin-right: 6px;
+  transition: background-color 0.15s ease-in-out;
+}
+.button:before {
+  content: "";
+  display: block;
+  position: absolute;
+  left: -42px;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  width: 40px;
+  height: 20px;
+  background: url("https://assets.codepen.io/3735/nier-pointer.svg") no-repeat;
+  background-size: contain;
+  opacity: 0;
+  transition: opacity 0.15s ease-in-out;
+}
+.button:after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: -5px;
+  left: 0;
+  right: 0;
+  bottom: -5px;
+  border-top: transparent 2px solid;
+  border-bottom: transparent 2px solid;
+  transition: border-color 0.15s ease-in-out;
+}
+.button:hover, .button:active, .button:focus {
+  background-position: -100% 100%;
+  border-color: #c2bda6;
+  color: #c2bda6;
+  box-shadow: 4px 4px 6px 2px rgba(72, 70, 61, 0.15);
+  outline: 0;
+}
+.button:hover .button-label:before, .button:active .button-label:before, .button:focus .button-label:before {
+  background: #c2bda6;
+}
+.button:hover:before, .button:active:before, .button:focus:before {
+  opacity: 1;
+}
+.button:hover:after, .button:active:after, .button:focus:after {
+  border-top-color: #48463d;
+  border-bottom-color: #48463d;
+}
+
+.test11 {
+  animation: pulse 20s ease-in-out infinite;
+}
+.test12 {
+  animation: pulse1 19s ease-in-out infinite;
+}
+.test21 {
+  animation: pulse2 20s ease-in-out infinite;
+}
+.test22 {
+  animation: pulse3 19s ease-in-out infinite;
+}
+.test23 {
+  animation: pulse4 18s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0% {
+    transform: translatex(-6px) translatey(-6px)
+  }
+  50% {
+    transform: translatex(0px) translatey(0px)
+  }
+  100% {
+    transform: translatex(-6px) translatey(-6px);
+  }
+}
+@keyframes pulse1 {
+  0% {
+    transform: translatex(-13px) translatey(-13px)
+  }
+  50% {
+    transform: translatex(0px) translatey(0px)
+  }
+  100% {
+    transform: translatex(-13px) translatey(-13px);
+  }
+}
+@keyframes pulse2 {
+  0% {
+    transform: translatex(-20px) translatey(-15px)
+  }
+  50% {
+    transform: translatex(-20px) translatey(15px)
+    /* transform: translatex(0px) translatey(10px) */
+  }
+  100% {
+    transform: translatex(-20px) translatey(-15px)
+  }
+}
+
+@keyframes pulse3 {
+  0% {
+    transform: translatex(-20px) translatey(-15px)
+  }
+  50% {
+    transform: translatex(-20px) translatey(15px)
+    /* transform: translatex(0px) translatey(10px) */
+  }
+  100% {
+    transform: translatex(-20px) translatey(-15px)
+  }
+}
+@keyframes pulse4 {
+  0% {
+    transform: translatex(-20px) translatey(-15px)
+  }
+  50% {
+    transform: translatex(-20px) translatey(15px)
+    /* transform: translatex(0px) translatey(10px) */
+  }
+  100% {
+    transform: translatex(-20px) translatey(-15px)
+  }
+}
+.oneCirlce {
+  /* border: 2px solid black; */
+  display: inline-block;
+  text-align: left;
+  /* margin: 20% auto; */
+  position: absolute;
+  left: -10px;
+  top: -10px;
+}

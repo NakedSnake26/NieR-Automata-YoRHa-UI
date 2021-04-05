@@ -1,13 +1,18 @@
-html
-{
-  cursor: url('nier.png'), auto;
+html {
+  cursor: url("nier.png"), auto;
 }
 
 body {
-  background-color:  #cdc8b0; 
+  background-color: #cdc8b0;
   background-size: 6px 6px;
-  background-image: linear-gradient(90deg, transparent, transparent 5px, rgba(0, 0, 0, 0.07) 6px), linear-gradient(transparent, transparent 5px, rgba(0, 0, 0, 0.07) 6px);
-  color: #4D493E;
+  background-image: linear-gradient(
+      90deg,
+      transparent,
+      transparent 5px,
+      rgba(0, 0, 0, 0.07) 6px
+    ),
+    linear-gradient(transparent, transparent 5px, rgba(0, 0, 0, 0.07) 6px);
+  color: #4d493e;
   /* font-family: "Noto Sans", sans-serif; */
   /* font-weight: 300; */
   margin: 0;
@@ -32,7 +37,13 @@ body {
 
 .button {
   position: relative;
-  background: linear-gradient(90deg, rgba(72, 70, 61, 0.25) 0%, rgba(72, 70, 61, 0.25) 50%, #48463d 50%, #48463d 100%);
+  background: linear-gradient(
+    90deg,
+    rgba(72, 70, 61, 0.25) 0%,
+    rgba(72, 70, 61, 0.25) 50%,
+    #48463d 50%,
+    #48463d 100%
+  );
   background-size: 200%;
   color: #48463d;
   border: none;
@@ -40,7 +51,8 @@ body {
   line-height: 1;
   cursor: pointer;
   text-align: left;
-  transition: background 0.15s ease-in-out, color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  transition: background 0.15s ease-in-out, color 0.15s ease-in-out,
+    box-shadow 0.15s ease-in-out;
 }
 .button-label {
   display: flex;
@@ -78,7 +90,7 @@ body {
   width: 157.8px;
   left: 0px;
   bottom: -1px;
-  content: '';
+  content: "";
   background-color: #454138;
   position: absolute;
   transition: all 0.25s ease-in-out;
@@ -89,19 +101,19 @@ body {
   width: 157.8px;
   left: 0px;
   top: -1px;
-  content: '';
+  content: "";
   background-color: #454138;
   position: absolute;
   transition: all 0.25s ease-in-out;
   opacity: 0;
 }
-.button:hover, .button:active/*, .button:focus */ {  
+.button:hover, .button:active/*, .button:focus */ {
   background-position: -100% 100%;
   color: #c2bda6;
   box-shadow: 4px 4px 6px 2px rgba(72, 70, 61, 0.15);
   outline: 0;
 }
-.button:hover .button-label:before, .button:active .button-label:before/*, .button:focus  .button-label:before */{
+.button:hover .button-label:before, .button:active .button-label:before/*, .button:focus  .button-label:before */ {
   background: #c2bda6;
 }
 .button:hover::after {
@@ -115,7 +127,6 @@ body {
 .button:hover .icon-test {
   opacity: 1;
 }
-
 
 .test11 {
   animation: pulse 20s ease-in-out infinite;
@@ -135,10 +146,10 @@ body {
 
 @keyframes pulse {
   0% {
-    transform: translatex(-6px) translatey(-6px)
+    transform: translatex(-6px) translatey(-6px);
   }
   50% {
-    transform: translatex(0px) translatey(0px)
+    transform: translatex(0px) translatey(0px);
   }
   100% {
     transform: translatex(-6px) translatey(-6px);
@@ -146,10 +157,10 @@ body {
 }
 @keyframes pulse1 {
   0% {
-    transform: translatex(-13px) translatey(-13px)
+    transform: translatex(-13px) translatey(-13px);
   }
   50% {
-    transform: translatex(0px) translatey(0px)
+    transform: translatex(0px) translatey(0px);
   }
   100% {
     transform: translatex(-13px) translatey(-13px);
@@ -157,39 +168,39 @@ body {
 }
 @keyframes pulse2 {
   0% {
-    transform: translatex(-20px) translatey(-15px)
+    transform: translatex(-20px) translatey(-15px);
   }
   50% {
-    transform: translatex(-20px) translatey(15px)
+    transform: translatex(-20px) translatey(15px);
     /* transform: translatex(0px) translatey(10px) */
   }
   100% {
-    transform: translatex(-20px) translatey(-15px)
+    transform: translatex(-20px) translatey(-15px);
   }
 }
 
 @keyframes pulse3 {
   0% {
-    transform: translatex(-20px) translatey(-15px)
+    transform: translatex(-20px) translatey(-15px);
   }
   50% {
-    transform: translatex(-20px) translatey(15px)
+    transform: translatex(-20px) translatey(15px);
     /* transform: translatex(0px) translatey(10px) */
   }
   100% {
-    transform: translatex(-20px) translatey(-15px)
+    transform: translatex(-20px) translatey(-15px);
   }
 }
 @keyframes pulse4 {
   0% {
-    transform: translatex(-20px) translatey(-15px)
+    transform: translatex(-20px) translatey(-15px);
   }
   50% {
-    transform: translatex(-20px) translatey(15px)
+    transform: translatex(-20px) translatey(15px);
     /* transform: translatex(0px) translatey(10px) */
   }
   100% {
-    transform: translatex(-20px) translatey(-15px)
+    transform: translatex(-20px) translatey(-15px);
   }
 }
 .oneCirlce {
@@ -201,4 +212,3 @@ body {
   left: -10px;
   top: -10px;
 }
-

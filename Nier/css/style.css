@@ -1,5 +1,7 @@
+@import url("fonts.css");
+
 html {
-  cursor: url("nier.png"), auto;
+  cursor: url("../img/nier-cursor.png"), auto;
 }
 
 body {
@@ -13,6 +15,7 @@ body {
     ),
     linear-gradient(transparent, transparent 5px, rgba(0, 0, 0, 0.07) 6px);
   color: #4d493e;
+  font-family: robin_pro_db;
   /* font-family: "Noto Sans", sans-serif; */
   /* font-weight: 300; */
   margin: 0;
@@ -31,12 +34,13 @@ body {
 }
 
 .shadow {
-  text-shadow: 4px 4px 0px rgb(72 70 61 / 25%);
+  text-shadow: 5px 4px 0px rgb(72 70 61 / 25%);
   position: relative;
 }
 
 .button {
   position: relative;
+  font-family: robin_pro_db;
   background: linear-gradient(
     90deg,
     rgba(72, 70, 61, 0.25) 0%,
@@ -70,7 +74,7 @@ body {
   margin: auto;
   width: 40px;
   height: 20px;
-  background: url("https://assets.codepen.io/3735/nier-pointer.svg") no-repeat;
+  background: url("./img/nier-pointer.svg") no-repeat;
   background-size: contain;
   opacity: 0;
   transition: opacity 0.15s ease-in-out;

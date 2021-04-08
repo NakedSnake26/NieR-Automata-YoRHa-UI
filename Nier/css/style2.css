@@ -11,12 +11,12 @@ body header {
 }
 
 canvas {
-  animation: wrapperappear 1s ease 11s 1 normal forwards;
+  animation: wrapperappear 1s ease 20s 1 normal forwards;
   opacity: 0;
 }
 
 header {
-  animation: wrapperappear 1s ease 11s 1 normal forwards;
+  animation: wrapperappear 1s ease 20s 1 normal forwards;
   opacity: 0;
 }
 
@@ -24,7 +24,7 @@ main {
   display: grid;
   grid-template-rows: repeat(4, 1fr);
   justify-content: center;
-  animation: wrapperappear 1s ease 11s 1 normal forwards;
+  animation: wrapperappear 1s ease 20s 1 normal forwards;
   opacity: 0;
 }
 
@@ -123,8 +123,8 @@ main {
   left: 0;
   /* right: 0; */
   /* margin: auto; */
-  height: 750px;
-  width: 1280px;
+  height: 99%;
+  width: 100%;
   background-size: 6px 6px;
   /* background-image: linear-gradient(
     90deg,
@@ -146,7 +146,7 @@ main {
   letter-spacing: 2px;
   text-indent: 10px;
   visibility: visible;
-  /* animation: loadingvisibility 0.5s ease 18s normal forwards; */
+  animation: loadingvisibility 0.5s ease-in-out 18.5s normal forwards;
   transform: scaleY(1) scaleX(1);
 }
 
@@ -181,7 +181,7 @@ main {
   height: 15px;
   top: 100px;
   left: 100px;
-  width: 100%;
+  width: 50%;
   float: left;
   position: relative;
   z-index: 1;
@@ -196,7 +196,7 @@ main {
   height: 15px;
   top: 80px;
   left: 70px;
-  width: 100%;
+  width: 50%;
   float: left;
   position: relative;
   z-index: 1;
@@ -229,4 +229,14 @@ main {
   50% {
     opacity: 1;
   }
+}
+
+#particles-js{
+  position: absolute;
+  width: 99%;
+  height: 99%;
+  background-image: url('');
+  background-size: cover;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
 }

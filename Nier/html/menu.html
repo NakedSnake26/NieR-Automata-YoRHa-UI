@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <head>
   <meta charset="UTF-8">
-  <title>NieR:Automata YoRHa UI</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Setting</title>
   <link rel="stylesheet" href="../css/style.css">
 
 </head>
@@ -22,46 +23,42 @@
     <line class="leftLine" x1="7%" y1="16%" x2="91%" y2="100%" stroke="#b4af9a" stroke-width="1.5"></line>
  </svg>
   </div>
- <!-- <div class="main">
-   <h1 class="shadow-text">ITEM</h1>
-  <button class="button">
-    <span class="button-icon"></span>
-    <span class="button-text">Hey, this is a button!</span>
-  </button>
- </div> -->
 <main>
   <div class="wrap">
-    <div class="button-column">
-      <div class="main-text">
-        <span>SETTINGS</span>
+    <div class="wrap__column">
+      <div class="wrap__text">
+        <h2>SETTINGS</h2>
       </div>
-      <div class="button-group">
+      <div class="wrap__group">
         <button class="button">
-           <span class="button-icon"></span>
-           <span class="button-text">Language</span>
+           <span class="button__icon"></span>
+           <span class="button__text">Status</span>
 
         <button class="button">
-           <span class="button-icon"></span>
-           <span class="button-text">Game</span>
+           <span class="button__icon"></span>
+           <span class="button__text">Game</span>
 
         <button class="button">
-           <span class="button-icon"></span>
-           <span class="button-text">Camera</span>
+           <span class="button__icon"></span>
+           <span class="button__text">Camera</span>
 
         <button class="button">
-           <span class="button-icon"></span>
-           <span class="button-text">Screen</span>
+           <span class="button__icon"></span>
+           <span class="button__text">Screen</span>
 
         <button class="button">
-          <span class="button-icon"></span>
-          <span class="button-text">Sound</span>
-
-        <button class="button">
-           <span class="button-icon"></span>
-           <span class="button-text">Other</span>
+          <span class="button__icon"></span>
+          <span class="button__text">Sound</span>
+          <form action="start.html">
+            <button class="button">
+              <span class="button__icon"></span>
+              <span class="button__text">Back</span>
+          </form>
       </div>
     </div>
   </div>
 </main>
+<script src="../../node_modules/gsap/dist/gsap.min.js"></script>
+<script src="../script/animGsap.js"></script>
 </body>
 </html>

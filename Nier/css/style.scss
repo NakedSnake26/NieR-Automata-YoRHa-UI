@@ -1,85 +1,101 @@
 @import url("fonts.css");
 
+$mainColor: #cdc8b0;
+$textColor: #4d493e;
+
 html {
   cursor: url("../img/nier-cursor.png"), auto;
 }
+/* GSAP animations */
+.wrap__column {
+  opacity: 0;
+}
+h2 span {
+  opacity: 0;
+}
+.button-text span {
+  opacity: 0;
+}
+.wrap__group .button {
+  opacity: 0;
+}
+/* End GSAP animatios */
+h3 {
+  all: unset;
+}
+h2 {
+  all: unset;
+}
 
 body {
-  background-color: #cdc8b0;
+  background-color: $mainColor;
   background-size: 6px 6px;
-  background-image: linear-gradient(90deg, transparent, transparent 5px, rgba(0, 0, 0, 0.07) 6px),
-  linear-gradient(transparent, transparent 5px, rgba(0, 0, 0, 0.07) 6px);
-  color: #4d493e;
+  background-image: linear-gradient(
+      90deg,
+      transparent,
+      transparent 5px,
+      rgba(0, 0, 0, 0.07) 6px
+    ),
+    linear-gradient(transparent, transparent 5px, rgba(0, 0, 0, 0.07) 6px);
+  color: $textColor;
   font-family: robin_pro_db;
   margin: 0;
-  /* min-height: 100vh; */
   /* box-shadow: inset 0 0 150px rgba(77, 73, 62, 0.4), inset 0 0 150px rgba(77, 73, 62, 0.3); */
-//  display: flex;
- // min-height: 100vh;
- // flex-direction: column;
-   letter-spacing: 0.1rem;
-  /* border: 1px solid red; */
 }
-
-// .main {
-//   text-align: center;
-//   margin: 20% auto;
-// }
-
 main {
-    display: grid;
-    grid-template-rows: 770px;
+  display: grid;
+  grid-template-rows: 767px;
 }
-// .button-column {
-//      display: grid;
-// }
-// .button-group {
-//     display: grid;
-//     grid-template: repeat(6, 50px) / repeat(5, 1fr);
-//     grid-auto-flow: column;
-//     justify-items: left;
-//     align-items: center;
-//     background-image: linear-gradient( 90deg , transparent 12px, rgba(72, 70, 61, 0.25) 12px, transparent 16px),
-//     linear-gradient( 90deg, rgba(72, 70, 61, 0.25) 6px, transparent 0px);
-//     background-repeat: no-repeat;
-// }
-.button-group {
-    display: flex;
-  //  align-items: flex-start;
-    flex-direction: column;
-    padding-left: 42px;
-    background-repeat: no-repeat;
-    background-image: linear-gradient(90deg, transparent 12px, rgba(72, 70, 61, 0.25) 12px, transparent 16px), 
-    linear-gradient(90deg, rgba(72, 70, 61, 0.25) 6px, transparent 0px);
-}
+/* Group buttons */
 .wrap {
-    display: grid;
-    grid-template: repeat(5, 1fr) / repeat(5, 1fr);
-}
-.main-text {
-  position: relative;
-  font-size: 36px;
-  text-transform: uppercase;
-  letter-spacing: 6px;
-   margin-bottom: 64px;
-  text-shadow: 5px 5px 0px rgb(72 70 61 / 25%);
-}
-.button-column {
+  display: grid;
+  grid-template: repeat(5, 1fr) / repeat(5, 1fr);
+
+  &__column {
     margin-left: 32px;
     grid-row: 2;
     width: 210px;
-}
-.button-group .button {
+  }
+  &__text {
+    position: relative;
+    font-size: 36px;
+    text-transform: uppercase;
+    letter-spacing: 6px;
+    margin-bottom: 64px;
+    text-shadow: 5px 5px 0px rgb(72 70 61 / 25%);
+  }
+
+  &__group {
+    display: flex;
+    flex-direction: column;
+    padding-left: 42px;
+    background-repeat: no-repeat;
+    background-image: linear-gradient(
+        90deg,
+        transparent 12px,
+        rgba(72, 70, 61, 0.25) 12px,
+        transparent 16px
+      ),
+      linear-gradient(90deg, rgba(72, 70, 61, 0.25) 6px, transparent 0px);
+  }
+
+  &__group .button {
     margin-bottom: 18px;
-}
-.button-group .button:last-child {
+  }
+
+  &__group .button:last-child {
     margin-bottom: 0;
+  }
 }
+/* End group buttons */
+
+/* Text shadow */
 .shadow-text {
   text-shadow: 5px 4px 0px rgb(72 70 61 / 25%);
   position: relative;
 }
-
+/* End text shadow */
+/* button */
 .button {
   position: relative;
   font-family: robin_pro_db;
@@ -87,11 +103,11 @@ main {
     90deg,
     rgba(72, 70, 61, 0.25) 0%,
     rgba(72, 70, 61, 0.25) 50%,
-    #48463d 50%,
-    #48463d 100%
+    $textColor 50%,
+    $textColor 100%
   );
   background-size: 200%;
-  color: #48463d;
+  color: $textColor;
   border: none;
   padding: 8px 8px 7px;
   line-height: 1;
@@ -99,82 +115,91 @@ main {
   text-align: left;
   transition: background 0.15s ease-in-out, color 0.15s ease-in-out,
     box-shadow 0.15s ease-in-out;
-}
-.button-text {
-  display: flex;
-  align-items: center;
-  font-size: 16px;
- // justify-content: center;
-}
+  /* Span text */
+  &__text {
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    /*justify-content: center;*/
 
-.button-icon {
-  content: "";
-  display: block;
-  position: absolute;
-  left: -42px;
-  top: 0;
-  bottom: 0;
-  margin: auto;
-  width: 40px;
-  height: 20px;
-  background: url("../img/nier-pointer.svg") no-repeat;
-  background-size: contain;
-  opacity: 0;
-  transition: opacity 0.15s ease-in-out;
-}
+    &:before {
+      content: "";
+      display: inline-block;
+      height: 16px;
+      width: 16px;
+      background: $textColor;
+      margin-right: 6px;
+      transition: background-color 0.15s ease-in-out;
+    }
+  }
+  /* End span text */
 
-.button-text:before {
-  content: "";
-  display: inline-block;
-  height: 16px;
-  width: 16px;
-  background: #48463d;
-  margin-right: 6px;
-  transition: background-color 0.15s ease-in-out;
+  /* Span icon pointer */
+  &__icon {
+    content: "";
+    display: block;
+    position: absolute;
+    left: -42px;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    width: 40px;
+    height: 20px;
+    background: url("../img/nier-pointer.svg") no-repeat;
+    background-size: contain;
+    opacity: 0;
+    transition: opacity 0.15s ease-in-out;
+  }
+  /* End span icon pointer */
+  &::before {
+    height: 1px;
+    width: 100%;
+    left: 0px;
+    bottom: -1px;
+    content: "";
+    background-color: $textColor;
+    position: absolute;
+    transition: all 0.25s ease-in-out;
+    opacity: 0;
+  }
+  &::after {
+    height: 1px;
+    width: 100%;
+    left: 0px;
+    top: -1px;
+    content: "";
+    background-color: $textColor;
+    position: absolute;
+    transition: all 0.25s ease-in-out;
+    opacity: 0;
+  }
+  &:hover,
+  &:active,
+  &:focus {
+    background-position: -100% 100%;
+    color: $mainColor;
+    box-shadow: 4px 4px 6px 2px rgba(72, 70, 61, 0.15);
+    outline: 0;
+  }
+  &:hover &__text::before,
+  &:active &__text::before,
+  &:focus &__text::before {
+    background: $mainColor;
+  }
+  &:hover::after {
+    opacity: 1;
+    top: -4px;
+  }
+  &:hover::before {
+    opacity: 1;
+    bottom: -4px;
+  }
+  &:hover &__icon,
+  &:focus &__icon {
+    opacity: 1;
+  }
 }
-.button:before {
-  height: 1px;
-  width: 100%;
-  left: 0px;
-  bottom: -1px;
-  content: "";
-  background-color: #454138;
-  position: absolute;
-  transition: all 0.25s ease-in-out;
-  opacity: 0;
-}
-.button:after  {
-  height: 1px;
-  width: 100%;
-  left: 0px;
-  top: -1px;
-  content: "";
-  background-color: #454138;
-  position: absolute;
-  transition: all 0.25s ease-in-out;
-  opacity: 0;
-}
-.button:hover, .button:active, .button:focus {
-  background-position: -100% 100%;
-  color: #c2bda6;
-  box-shadow: 4px 4px 6px 2px rgba(72, 70, 61, 0.15);
-  outline: 0;
-}
-.button:hover .button-text:before, .button:active .button-text:before, .button:focus .button-text:before {
-  background: #c2bda6;
-}
-.button:hover::after {
-  opacity: 1;
-  top: -4px;
-}
-.button:hover::before {
-  opacity: 1;
-  bottom: -4px;
-}
-.button:hover .button-icon, .button:focus .button-icon {
-  opacity: 1;
-}
-
+/* SVG circles */
 .firstCircle {
   display: inline-block;
   text-align: center;
@@ -189,6 +214,9 @@ main {
   position: absolute;
   transform: rotate(180deg);
 }
+/* End SVG circles */
+
+/* Animate SVG circles */
 .bigCircle {
   animation: bigCircle 20s ease-in-out infinite;
 }
@@ -198,56 +226,56 @@ main {
 .middleLine {
   animation: middleLine 20s ease-in-out infinite;
 }
-.rightLine  {
+.rightLine {
   animation: rightLine 19s ease-in-out infinite;
 }
-.leftLine  {
+.leftLine {
   animation: leftLine 18s ease-in-out infinite;
 }
 
 @keyframes bigCircle {
-    0% {
-      transform: translateX(-10px) translateY(-10px);
-    }
-    50% {
-      transform: translateX(0px) translateY(0px);
-    }
-    100% {
-      transform: translateX(-10px) translateY(-10px);
-    }
+  0% {
+    transform: translateX(-10px) translateY(-10px);
   }
+  50% {
+    transform: translateX(0px) translateY(0px);
+  }
+  100% {
+    transform: translateX(-10px) translateY(-10px);
+  }
+}
 @keyframes smallCircle {
-    0% {
-      transform: translateX(-6px) translateY(-6px);
-    }
-    50% {
-      transform: translateX(0px) translateY(0px);
-    }
-    100% {
-      transform: translateX(-6px) translateY(-6px);
-    }
+  0% {
+    transform: translateX(-6px) translateY(-6px);
+  }
+  50% {
+    transform: translateX(0px) translateY(0px);
+  }
+  100% {
+    transform: translateX(-6px) translateY(-6px);
+  }
 }
 @keyframes middleLine {
-    0% {
-      transform: translateX(0px) translateY(-15px);
-    }
-    50% {
-      transform: translateX(0px) translateY(15px);
-    }
-    100% {
-      transform: translateX(0px) translateY(-15px);
-    }
+  0% {
+    transform: translateX(0px) translateY(-15px);
+  }
+  50% {
+    transform: translateX(0px) translateY(15px);
+  }
+  100% {
+    transform: translateX(0px) translateY(-15px);
+  }
 }
 @keyframes rightLine {
-    0% {
-      transform: translateX(0px) translateY(-15px);
-    }
-    50% {
-      transform: translateX(0px) translateY(15px);
-    }
-    100% {
-      transform: translateX(0px) translateY(-15px);
-    }
+  0% {
+    transform: translateX(0px) translateY(-15px);
+  }
+  50% {
+    transform: translateX(0px) translateY(15px);
+  }
+  100% {
+    transform: translateX(0px) translateY(-15px);
+  }
 }
 @keyframes leftLine {
   0% {
@@ -260,12 +288,65 @@ main {
     transform: translateX(15px) translateY(0);
   }
 }
+/* End animate SVG circles */
 
 @media screen and (max-width: 1120px) {
   .firstCircle {
     opacity: 0;
+    width: 0;
+    height: 0;
   }
   .secondCircle {
     opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  main {
+    grid-template-rows: 800px;
+  }
+  .wrap {
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr;
+    align-self: center;
+    justify-self: left;
+    margin-left: 32px;
+    grid-template-areas: none;
+    transform: scale(1.5);
+  }
+}
+@media screen and (max-width: 1024px) {
+  .wrap {
+    transform: scale(1.9);
+    margin-left: 64px;
+    padding-top: 00px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .wrap {
+    grid-template-columns: 300px;
+    transform: scale(1.4);
+    margin-left: 74px
+  }
+}
+@media screen and (max-width: 414px) {
+  main {
+    grid-template-rows: 600px;
+  }
+  .wrap {
+    grid-template-columns: 300px;
+    padding-top: 40px;
+    transform: scale(1.2);
+    margin-left: 24px
+  }
+}
+@media screen and (max-width: 360px) {
+  main {
+    grid-template-rows: 600px;
+  }
+  .wrap {
+    grid-template-columns: 300px;
+    transform: scale(1.2);
+    margin-left: 34px
   }
 }

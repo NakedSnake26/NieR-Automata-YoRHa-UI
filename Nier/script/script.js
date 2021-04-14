@@ -1,3 +1,4 @@
+//canvas
 const starfield = document.getElementById('starfield');
 starfield.width = document.body.clientWidth;
 starfield.height = document.body.clientHeight;
@@ -44,8 +45,9 @@ const putPixel = (x, y, brightness) => {
 stars.forEach((star) => {
   putPixel(star.x, star.y, star.brightness);
 });
+//end canvas
 
-//setCanvasExtents();
+//typing text
 function printText( el ){
 
 	let letterTimeout = 20
@@ -69,4 +71,5 @@ function printText( el ){
 // init
 let el = document.getElementById( 'my-text' )
 printText( el );
+//end typing text
 

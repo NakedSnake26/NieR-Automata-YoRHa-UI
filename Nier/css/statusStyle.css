@@ -1,31 +1,20 @@
 @import url("fonts.css");
-
-$mainColor: #cdc8b0;
-$textColor: #4d493e;
-$circleColor: #b4af9a;
-
 html {
   cursor: url("../img/nier-cursor.png"), auto;
 }
 
 body {
-  background-color: $mainColor;
+  background-color: #cdc8b0;
   background-size: 6px 6px;
-  background-image: linear-gradient(
-      90deg,
-      transparent,
-      transparent 5px,
-      rgba(0, 0, 0, 0.07) 6px
-    ),
-    linear-gradient(transparent, transparent 5px, rgba(0, 0, 0, 0.07) 6px);
-  color: $textColor;
+  background-image: linear-gradient(90deg, transparent, transparent 5px, rgba(0, 0, 0, 0.07) 6px), linear-gradient(transparent, transparent 5px, rgba(0, 0, 0, 0.07) 6px);
+  color: #4d493e;
   font-family: robin_pro_db;
   margin: 0;
   /* position: relative; */
   /* box-shadow: inset 0 0 150px rgba(77, 73, 62, 0.4), inset 0 0 150px rgba(77, 73, 62, 0.3); */
   /* box-shadow: 0 0 120px inset #1103, 0 0 60px inset #1106; */
-  //  взял из другого сайта, более удачная модель теней
 }
+
 body::before {
   content: "";
   display: block;
@@ -39,6 +28,7 @@ body::before {
   bottom: auto;
   top: 30px;
 }
+
 body::after {
   content: "";
   display: block;
@@ -54,9 +44,10 @@ body::after {
 }
 
 .wrap {
-    display: grid;
-    grid-template: 1fr / repeat(26, 1fr);
+  display: grid;
+  grid-template: 1fr/repeat(26, 1fr);
 }
+
 /* SVG circles */
 .firstCircle {
   display: inline-block;
@@ -72,23 +63,44 @@ body::after {
   position: absolute;
   transform: rotate(180deg);
 }
-/* End SVG circles */
 
+/* End SVG circles */
 /* Animate SVG circles */
 .bigCircle {
-  animation: bigCircle 20s ease-in-out infinite;
+  -webkit-animation: bigCircle 20s ease-in-out infinite;
+          animation: bigCircle 20s ease-in-out infinite;
 }
+
 .smallCircle {
-  animation: smallCircle 19s ease-in-out infinite;
+  -webkit-animation: smallCircle 19s ease-in-out infinite;
+          animation: smallCircle 19s ease-in-out infinite;
 }
+
 .middleLine {
-  animation: middleLine 20s ease-in-out infinite;
+  -webkit-animation: middleLine 20s ease-in-out infinite;
+          animation: middleLine 20s ease-in-out infinite;
 }
+
 .rightLine {
-  animation: rightLine 19s ease-in-out infinite;
+  -webkit-animation: rightLine 19s ease-in-out infinite;
+          animation: rightLine 19s ease-in-out infinite;
 }
+
 .leftLine {
-  animation: leftLine 18s ease-in-out infinite;
+  -webkit-animation: leftLine 18s ease-in-out infinite;
+          animation: leftLine 18s ease-in-out infinite;
+}
+
+@-webkit-keyframes bigCircle {
+  0% {
+    transform: translateX(-10px) translateY(-10px);
+  }
+  50% {
+    transform: translateX(0px) translateY(0px);
+  }
+  100% {
+    transform: translateX(-10px) translateY(-10px);
+  }
 }
 
 @keyframes bigCircle {
@@ -102,6 +114,17 @@ body::after {
     transform: translateX(-10px) translateY(-10px);
   }
 }
+@-webkit-keyframes smallCircle {
+  0% {
+    transform: translateX(-6px) translateY(-6px);
+  }
+  50% {
+    transform: translateX(0px) translateY(0px);
+  }
+  100% {
+    transform: translateX(-6px) translateY(-6px);
+  }
+}
 @keyframes smallCircle {
   0% {
     transform: translateX(-6px) translateY(-6px);
@@ -113,7 +136,29 @@ body::after {
     transform: translateX(-6px) translateY(-6px);
   }
 }
+@-webkit-keyframes middleLine {
+  0% {
+    transform: translateX(0px) translateY(-15px);
+  }
+  50% {
+    transform: translateX(0px) translateY(15px);
+  }
+  100% {
+    transform: translateX(0px) translateY(-15px);
+  }
+}
 @keyframes middleLine {
+  0% {
+    transform: translateX(0px) translateY(-15px);
+  }
+  50% {
+    transform: translateX(0px) translateY(15px);
+  }
+  100% {
+    transform: translateX(0px) translateY(-15px);
+  }
+}
+@-webkit-keyframes rightLine {
   0% {
     transform: translateX(0px) translateY(-15px);
   }
@@ -135,6 +180,17 @@ body::after {
     transform: translateX(0px) translateY(-15px);
   }
 }
+@-webkit-keyframes leftLine {
+  0% {
+    transform: translateX(15px) translateY(0);
+  }
+  50% {
+    transform: translateX(-15px) translateY(0);
+  }
+  100% {
+    transform: translateX(15px) translateY(0);
+  }
+}
 @keyframes leftLine {
   0% {
     transform: translateX(15px) translateY(0);
@@ -146,4 +202,4 @@ body::after {
     transform: translateX(15px) translateY(0);
   }
 }
-/* End animate SVG circles */
+/* End animate SVG circles *//*# sourceMappingURL=statusStyle.css.map */

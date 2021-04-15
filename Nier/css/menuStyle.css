@@ -36,7 +36,37 @@ body {
   color: #4d493e;
   font-family: robin_pro_db;
   margin: 0;
+  /* position: relative; */
   /* box-shadow: inset 0 0 150px rgba(77, 73, 62, 0.4), inset 0 0 150px rgba(77, 73, 62, 0.3); */
+  /* box-shadow: 0 0 120px inset #1103, 0 0 60px inset #1106; */
+}
+
+body::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 20px;
+  background: url(../img/nier-border.svg) repeat-x;
+  background-size: contain;
+  bottom: auto;
+  top: 30px;
+}
+
+body::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 20px;
+  background: url(../img/nier-border.svg) repeat-x;
+  background-size: contain;
+  top: auto;
+  bottom: 30px;
 }
 
 main {
@@ -66,8 +96,9 @@ main {
   display: flex;
   flex-direction: column;
   padding-left: 42px;
+  /*  */
   background-repeat: no-repeat;
-  background-image: linear-gradient(90deg, transparent 12px, rgba(72, 70, 61, 0.25) 12px, transparent 16px), linear-gradient(90deg, rgba(72, 70, 61, 0.25) 6px, transparent 0px);
+  background-image: linear-gradient(90deg, #b4af9a, #b4af9a 7px, transparent 7px, transparent 10px, #b4af9a 10px, #b4af9a 12px, transparent 12px);
 }
 .wrap__group .button {
   margin-bottom: 18px;
@@ -88,7 +119,7 @@ main {
 .button {
   position: relative;
   font-family: robin_pro_db;
-  background: linear-gradient(90deg, rgba(72, 70, 61, 0.25) 0%, rgba(72, 70, 61, 0.25) 50%, #4d493e 50%, #4d493e 100%);
+  background: linear-gradient(90deg, #b4af9a 0%, #b4af9a 50%, #4d493e 50%, #4d493e 100%);
   background-size: 200%;
   color: #4d493e;
   border: none;
@@ -393,4 +424,4 @@ main {
     transform: scale(1.2);
     margin-left: 34px;
   }
-}/*# sourceMappingURL=style.css.map */
+}/*# sourceMappingURL=menuStyle.css.map */

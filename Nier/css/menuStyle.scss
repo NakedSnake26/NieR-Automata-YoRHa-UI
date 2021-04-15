@@ -2,6 +2,7 @@
 
 $mainColor: #cdc8b0;
 $textColor: #4d493e;
+$circleColor: #b4af9a;
 
 html {
   cursor: url("../img/nier-cursor.png"), auto;
@@ -40,7 +41,37 @@ body {
   color: $textColor;
   font-family: robin_pro_db;
   margin: 0;
+  /* position: relative; */
   /* box-shadow: inset 0 0 150px rgba(77, 73, 62, 0.4), inset 0 0 150px rgba(77, 73, 62, 0.3); */
+  /* box-shadow: 0 0 120px inset #1103, 0 0 60px inset #1106; */
+  //  взял из другого сайта, более удачная модель теней
+}
+
+body::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 20px;
+  background: url(../img/nier-border.svg) repeat-x;
+  background-size: contain;
+  bottom: auto;
+  top: 30px;
+}
+body::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 20px;
+  background: url(../img/nier-border.svg) repeat-x;
+  background-size: contain;
+  top: auto;
+  bottom: 30px;
 }
 main {
   display: grid;
@@ -68,15 +99,18 @@ main {
   &__group {
     display: flex;
     flex-direction: column;
-    padding-left: 42px;
+    padding-left: 42px; /*  */
     background-repeat: no-repeat;
     background-image: linear-gradient(
-        90deg,
-        transparent 12px,
-        rgba(72, 70, 61, 0.25) 12px,
-        transparent 16px
-      ),
-      linear-gradient(90deg, rgba(72, 70, 61, 0.25) 6px, transparent 0px);
+      90deg,
+      /* rgba(77, 73, 62, 0.2) */ $circleColor,
+      /* rgba(77, 73, 62, 0.2) */ $circleColor 7px,
+      transparent 7px,
+      transparent 10px,
+      /* rgba(77, 73, 62, 0.2) */ $circleColor 10px,
+      /* rgba(77, 73, 62, 0.2) */ $circleColor 12px,
+      transparent 12px
+    );
   }
 
   &__group .button {
@@ -101,8 +135,8 @@ main {
   font-family: robin_pro_db;
   background: linear-gradient(
     90deg,
-    rgba(72, 70, 61, 0.25) 0%,
-    rgba(72, 70, 61, 0.25) 50%,
+    /* rgba(72, 70, 61, 0.25) */ $circleColor 0%,
+    /* rgba(72, 70, 61, 0.25) */ $circleColor 50%,
     $textColor 50%,
     $textColor 100%
   );
@@ -326,7 +360,7 @@ main {
   .wrap {
     grid-template-columns: 300px;
     transform: scale(1.4);
-    margin-left: 74px
+    margin-left: 74px;
   }
 }
 @media screen and (max-width: 414px) {
@@ -337,7 +371,7 @@ main {
     grid-template-columns: 300px;
     padding-top: 40px;
     transform: scale(1.2);
-    margin-left: 24px
+    margin-left: 24px;
   }
 }
 @media screen and (max-width: 360px) {
@@ -347,6 +381,6 @@ main {
   .wrap {
     grid-template-columns: 300px;
     transform: scale(1.2);
-    margin-left: 34px
+    margin-left: 34px;
   }
 }

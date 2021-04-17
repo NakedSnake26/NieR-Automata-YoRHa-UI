@@ -1,7 +1,9 @@
 @import url("fonts.css");
 
 $mainColor: #cdc8b0;
-$textColor: #4d493e;
+$inMainBlockColor: #dad4ba;
+$textColor: #4e4b42;
+$buttonHover: #635f54;
 $circleColor: #b4af9a;
 
 html {
@@ -52,11 +54,268 @@ body::after {
   top: auto;
   bottom: 30px;
 }
-
 .wrap {
-    display: grid;
-    grid-template: 1fr / repeat(26, 1fr);
+  display: grid;
+  grid-template: 50px 700px 50px / repeat(24, 1fr);
 }
+.left {
+  background-color: bisque;
+  grid-area: 1 / 1 / 1 / 9;
+
+  &__text {
+    text-transform: uppercase;
+    text-shadow: 5px 4px 0px rgb(72 70 61 / 25%);
+    letter-spacing: 6px;
+    font-family: robin_pro_db;
+    font-size: 45px;
+  }
+  &__window {
+    display: flex;
+    top: 70px;
+    background-color: aqua;
+    // position: relative;
+    height: 65%;
+    width: 100%;
+    background-image: linear-gradient(
+      90deg,
+      /* rgba(77, 73, 62, 0.2) */ $circleColor,
+      /* rgba(77, 73, 62, 0.2) */ $circleColor 10px,
+      transparent 10px,
+      transparent 15.5px,
+      /* rgba(77, 73, 62, 0.2) */ $circleColor 15.5px,
+      /* rgba(77, 73, 62, 0.2) */ $circleColor 18px,
+      transparent 18px
+    );
+    &__section {
+      width: 100%;
+      margin: 0% 0% 0% 10%;
+      background-color: chocolate;
+
+      &__buttons {
+        display: flex;
+        flex-direction: column;
+      }
+      &__buttons .button {
+        margin-bottom: 5px;
+        width: 95%;
+      }
+      &__buttons .button:first-child {
+        margin-top: 10px;
+      }
+    }
+  }
+}
+.center {
+  background-color: yellow;
+  grid-area: 1 / 9 / 1 / 17;
+
+  &__window {
+    display: flex;
+    position: relative;
+    top: 90px;
+    background-color: aqua;
+    height: 65%;
+    width: 100%;
+
+    &__text {
+      background-color: $textColor;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      width: 100%;
+      height: max-content;
+      padding-left: 14px;
+    }
+    &__text span {
+      color: $mainColor;
+      width: 100%;
+      height: 100%;
+    }
+  }
+}
+.right {
+  background-color: tomato;
+  grid-area: 1 / 17 / 1 / 25;
+
+  &__window {
+    display: flex;
+    position: relative;
+    top: 90px;
+    background-color: violet;
+    height: 65%;
+    width: 100%;
+
+    &__text {
+      background-color: $textColor;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      width: 100%;
+      height: max-content;
+      padding-left: 14px;
+    }
+    &__text span {
+      color: $mainColor;
+      width: 100%;
+      height: 100%;
+    }
+  }
+}
+header {
+  display: grid;
+  background-color: azure;
+  grid-area: 1 / 2 / 1 / 24;
+  grid-template-columns: inherit;
+  background-image: linear-gradient(
+    90deg,
+    /* rgba(77, 73, 62, 0.2) */ $circleColor,
+    /* rgba(77, 73, 62, 0.2) */ $circleColor 10px,
+    transparent 10px,
+    transparent 15.5px,
+    /* rgba(77, 73, 62, 0.2) */ $circleColor 15.5px,
+    /* rgba(77, 73, 62, 0.2) */ $circleColor 18px,
+    transparent 18px
+  );
+}
+nav {
+  margin-left: 20px;
+  grid-area: 1 / 1 / 1 / 25;
+}
+.button__group {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  height: 100%;
+  width: 100%;
+}
+
+footer {
+  background-image: linear-gradient(
+    90deg,
+    /* rgba(77, 73, 62, 0.2) */ $circleColor,
+    /* rgba(77, 73, 62, 0.2) */ $circleColor 10px,
+    transparent 10px,
+    transparent 15.5px,
+    /* rgba(77, 73, 62, 0.2) */ $circleColor 15.5px,
+    /* rgba(77, 73, 62, 0.2) */ $circleColor 18px,
+    transparent 18px
+  );
+  background-color: brown;
+  grid-area: 3 / 2 / 3 / 24;
+}
+main {
+  background-color: black;
+  grid-area: 2 / 2 / 2 / 24;
+  display: grid;
+  grid-template-columns: inherit;
+  grid-auto-flow: column;
+}
+
+/* button */
+.button {
+  position: relative;
+  font-family: robin_pro_db;
+  background: linear-gradient(
+    90deg,
+    /* rgba(72, 70, 61, 0.25) */ $circleColor 0%,
+    /* rgba(72, 70, 61, 0.25) */ $circleColor 50%,
+    $buttonHover 50%,
+    $buttonHover 100%
+  );
+  background-size: 201%;
+  color: $textColor;
+  border: none;
+  padding: 8px 8px 7px;
+  line-height: 1;
+  cursor: pointer;
+  text-align: left;
+  transition: background 0.15s ease-in-out, color 0.15s ease-in-out,
+    box-shadow 0.15s ease-in-out;
+  /* Span text */
+  &__text {
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    /*justify-content: center;*/
+
+    &:before {
+      content: "";
+      display: inline-block;
+      height: 16px;
+      width: 16px;
+      background: $textColor;
+      margin-right: 6px;
+      transition: background-color 0.15s ease-in-out;
+    }
+  }
+  /* End span text */
+
+  /* Span icon pointer */
+  &__icon {
+    content: "";
+    display: block;
+    position: absolute;
+    left: -42px;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    width: 40px;
+    height: 20px;
+    background: url("../img/nier-pointer.svg") no-repeat;
+    background-size: contain;
+    opacity: 0;
+    transition: opacity 0.15s ease-in-out;
+  }
+  /* End span icon pointer */
+  &::before {
+    height: 1px;
+    width: 100%;
+    left: 0px;
+    bottom: -1px;
+    content: "";
+    background-color: $textColor;
+    position: absolute;
+    transition: all 0.25s ease-in-out;
+    opacity: 0;
+  }
+  &::after {
+    height: 1px;
+    width: 100%;
+    left: 0px;
+    top: -1px;
+    content: "";
+    background-color: $textColor;
+    position: absolute;
+    transition: all 0.25s ease-in-out;
+    opacity: 0;
+  }
+  &:hover,
+  &:active,
+  &:focus {
+    background-position: -100% 100%;
+    color: $mainColor;
+    box-shadow: 4px 4px 6px 2px rgba(72, 70, 61, 0.15);
+    outline: 0;
+  }
+  &:hover &__text::before,
+  &:active &__text::before,
+  &:focus &__text::before {
+    background: $mainColor;
+  }
+  &:hover::after {
+    opacity: 1;
+    top: -4px;
+  }
+  &:hover::before {
+    opacity: 1;
+    bottom: -4px;
+  }
+  &:hover &__icon,
+  &:focus &__icon {
+    opacity: 1;
+  }
+}
+/* End button */
 /* SVG circles */
 .firstCircle {
   display: inline-block;
@@ -65,7 +324,6 @@ body::after {
   bottom: 0;
   right: 0;
 }
-
 .secondCircle {
   display: inline-block;
   text-align: center;
@@ -147,3 +405,18 @@ body::after {
   }
 }
 /* End animate SVG circles */
+/* Media */
+@media screen and (max-width: 1120px) {
+  .firstCircle {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  .secondCircle {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+}
+
+/* End media */

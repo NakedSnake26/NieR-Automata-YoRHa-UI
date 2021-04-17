@@ -7,7 +7,7 @@ body {
   background-color: #cdc8b0;
   background-size: 6px 6px;
   background-image: linear-gradient(90deg, transparent, transparent 5px, rgba(0, 0, 0, 0.07) 6px), linear-gradient(transparent, transparent 5px, rgba(0, 0, 0, 0.07) 6px);
-  color: #4d493e;
+  color: #4e4b42;
   font-family: robin_pro_db;
   margin: 0;
   /* position: relative; */
@@ -45,9 +45,230 @@ body::after {
 
 .wrap {
   display: grid;
-  grid-template: 1fr/repeat(26, 1fr);
+  grid-template: 50px 700px 50px/repeat(24, 1fr);
 }
 
+.left {
+  background-color: bisque;
+  grid-area: 1/1/1/9;
+}
+.left__text {
+  text-transform: uppercase;
+  text-shadow: 5px 4px 0px rgba(72, 70, 61, 0.25);
+  letter-spacing: 6px;
+  font-family: robin_pro_db;
+  font-size: 45px;
+}
+.left__window {
+  display: flex;
+  top: 70px;
+  background-color: aqua;
+  height: 65%;
+  width: 100%;
+  background-image: linear-gradient(90deg, #b4af9a, #b4af9a 10px, transparent 10px, transparent 15.5px, #b4af9a 15.5px, #b4af9a 18px, transparent 18px);
+}
+.left__window__section {
+  width: 100%;
+  margin: 0% 0% 0% 10%;
+  background-color: chocolate;
+}
+.left__window__section__buttons {
+  display: flex;
+  flex-direction: column;
+}
+.left__window__section__buttons .button {
+  margin-bottom: 5px;
+  width: 95%;
+}
+.left__window__section__buttons .button:first-child {
+  margin-top: 10px;
+}
+
+.center {
+  background-color: yellow;
+  grid-area: 1/9/1/17;
+}
+.center__window {
+  display: flex;
+  position: relative;
+  top: 90px;
+  background-color: aqua;
+  height: 65%;
+  width: 100%;
+}
+.center__window__text {
+  background-color: #4e4b42;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
+  padding-left: 14px;
+}
+.center__window__text span {
+  color: #cdc8b0;
+  width: 100%;
+  height: 100%;
+}
+
+.right {
+  background-color: tomato;
+  grid-area: 1/17/1/25;
+}
+.right__window {
+  display: flex;
+  position: relative;
+  top: 90px;
+  background-color: violet;
+  height: 65%;
+  width: 100%;
+}
+.right__window__text {
+  background-color: #4e4b42;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
+  padding-left: 14px;
+}
+.right__window__text span {
+  color: #cdc8b0;
+  width: 100%;
+  height: 100%;
+}
+
+header {
+  display: grid;
+  background-color: azure;
+  grid-area: 1/2/1/24;
+  grid-template-columns: inherit;
+  background-image: linear-gradient(90deg, #b4af9a, #b4af9a 10px, transparent 10px, transparent 15.5px, #b4af9a 15.5px, #b4af9a 18px, transparent 18px);
+}
+
+nav {
+  margin-left: 20px;
+  grid-area: 1/1/1/25;
+}
+
+.button__group {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  height: 100%;
+  width: 100%;
+}
+
+footer {
+  background-image: linear-gradient(90deg, #b4af9a, #b4af9a 10px, transparent 10px, transparent 15.5px, #b4af9a 15.5px, #b4af9a 18px, transparent 18px);
+  background-color: brown;
+  grid-area: 3/2/3/24;
+}
+
+main {
+  background-color: black;
+  grid-area: 2/2/2/24;
+  display: grid;
+  grid-template-columns: inherit;
+  grid-auto-flow: column;
+}
+
+/* button */
+.button {
+  position: relative;
+  font-family: robin_pro_db;
+  background: linear-gradient(90deg, #b4af9a 0%, #b4af9a 50%, #635f54 50%, #635f54 100%);
+  background-size: 201%;
+  color: #4e4b42;
+  border: none;
+  padding: 8px 8px 7px;
+  line-height: 1;
+  cursor: pointer;
+  text-align: left;
+  transition: background 0.15s ease-in-out, color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  /* Span text */
+  /* End span text */
+  /* Span icon pointer */
+  /* End span icon pointer */
+}
+.button__text {
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+  /*justify-content: center;*/
+}
+.button__text:before {
+  content: "";
+  display: inline-block;
+  height: 16px;
+  width: 16px;
+  background: #4e4b42;
+  margin-right: 6px;
+  transition: background-color 0.15s ease-in-out;
+}
+.button__icon {
+  content: "";
+  display: block;
+  position: absolute;
+  left: -42px;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  width: 40px;
+  height: 20px;
+  background: url("../img/nier-pointer.svg") no-repeat;
+  background-size: contain;
+  opacity: 0;
+  transition: opacity 0.15s ease-in-out;
+}
+.button::before {
+  height: 1px;
+  width: 100%;
+  left: 0px;
+  bottom: -1px;
+  content: "";
+  background-color: #4e4b42;
+  position: absolute;
+  transition: all 0.25s ease-in-out;
+  opacity: 0;
+}
+.button::after {
+  height: 1px;
+  width: 100%;
+  left: 0px;
+  top: -1px;
+  content: "";
+  background-color: #4e4b42;
+  position: absolute;
+  transition: all 0.25s ease-in-out;
+  opacity: 0;
+}
+.button:hover, .button:active, .button:focus {
+  background-position: -100% 100%;
+  color: #cdc8b0;
+  box-shadow: 4px 4px 6px 2px rgba(72, 70, 61, 0.15);
+  outline: 0;
+}
+.button:hover .button__text::before, .button:active .button__text::before, .button:focus .button__text::before {
+  background: #cdc8b0;
+}
+.button:hover::after {
+  opacity: 1;
+  top: -4px;
+}
+.button:hover::before {
+  opacity: 1;
+  bottom: -4px;
+}
+.button:hover .button__icon, .button:focus .button__icon {
+  opacity: 1;
+}
+
+/* End button */
 /* SVG circles */
 .firstCircle {
   display: inline-block;
@@ -202,4 +423,19 @@ body::after {
     transform: translateX(15px) translateY(0);
   }
 }
-/* End animate SVG circles *//*# sourceMappingURL=statusStyle.css.map */
+/* End animate SVG circles */
+/* Media */
+@media screen and (max-width: 1120px) {
+  .firstCircle {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+
+  .secondCircle {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+}
+/* End media *//*# sourceMappingURL=statusStyle.css.map */

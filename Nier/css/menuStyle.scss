@@ -116,8 +116,14 @@ main {
   &__group .button {
     margin-bottom: 18px;
   }
-
+  &__group form {
+    margin-bottom: 18px;
+    display: grid;
+  }
   &__group .button:last-child {
+    margin-bottom: 0;
+  }
+  &__group form:last-child {
     margin-bottom: 0;
   }
 }

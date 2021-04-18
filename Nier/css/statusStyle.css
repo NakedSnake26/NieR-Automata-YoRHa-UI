@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @import url("fonts.css");
 html {
   cursor: url("../img/nier-cursor.png"), auto;
@@ -79,6 +80,8 @@ body::after {
 .left__window__section__buttons .button {
   margin-bottom: 5px;
   width: 95%;
+  background: linear-gradient(90deg, transparent 0%, transparent 50%, #635f54 50%, #635f54 100%);
+  background-size: 201%;
 }
 .left__window__section__buttons .button:first-child {
   margin-top: 10px;
@@ -87,9 +90,9 @@ body::after {
 .center {
   background-color: yellow;
   grid-area: 1/9/1/17;
+  /* align-self: center;  выключить relative  у window*/
 }
 .center__window {
-  display: flex;
   position: relative;
   top: 90px;
   background-color: aqua;
@@ -105,12 +108,46 @@ body::after {
   height: -webkit-max-content;
   height: -moz-max-content;
   height: max-content;
-  padding-left: 14px;
 }
 .center__window__text span {
   color: #cdc8b0;
   width: 100%;
   height: 100%;
+  padding-left: 5%;
+  overflow-wrap: break-word;
+}
+.center__window__img {
+  background-color: aquamarine;
+  height: 50%;
+  margin: 5% 5% 0% 5%;
+}
+.center__window .tet {
+  margin: 0% 5% 0% 5%;
+  overflow-wrap: break-word;
+}
+
+.tet_right span {
+  margin: 0% 5% 0% 5%;
+}
+
+.tet_right {
+  display: flex;
+  justify-content: space-between;
+}
+
+.square span {
+  margin: 0% 0% 0% 5%;
+  color: transparent;
+  width: 10px;
+  height: 10px;
+  border: 1px solid black;
+}
+
+hr {
+  border: none;
+  height: 2px;
+  background-color: black;
+  margin: 3% 5% 0% 5%;
 }
 
 .right {
@@ -118,7 +155,6 @@ body::after {
   grid-area: 1/17/1/25;
 }
 .right__window {
-  display: flex;
   position: relative;
   top: 90px;
   background-color: violet;
@@ -134,12 +170,12 @@ body::after {
   height: -webkit-max-content;
   height: -moz-max-content;
   height: max-content;
-  padding-left: 14px;
 }
 .right__window__text span {
   color: #cdc8b0;
   width: 100%;
   height: 100%;
+  padding-left: 5%;
 }
 
 header {

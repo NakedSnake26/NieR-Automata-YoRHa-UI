@@ -103,7 +103,14 @@ main {
 .wrap__group .button {
   margin-bottom: 18px;
 }
+.wrap__group form {
+  margin-bottom: 18px;
+  display: grid;
+}
 .wrap__group .button:last-child {
+  margin-bottom: 0;
+}
+.wrap__group form:last-child {
   margin-bottom: 0;
 }
 

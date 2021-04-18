@@ -98,6 +98,14 @@ body::after {
       &__buttons .button {
         margin-bottom: 5px;
         width: 95%;
+        background: linear-gradient(
+          90deg,
+          /* rgba(72, 70, 61, 0.25) */ transparent 0%,
+          /* rgba(72, 70, 61, 0.25) */ transparent 50%,
+          $buttonHover 50%,
+          $buttonHover 100%
+        );
+        background-size: 201%;
       }
       &__buttons .button:first-child {
         margin-top: 10px;
@@ -108,9 +116,10 @@ body::after {
 .center {
   background-color: yellow;
   grid-area: 1 / 9 / 1 / 17;
+      /* align-self: center;  выключить relative  у window*/
 
   &__window {
-    display: flex;
+    // display: flex;
     position: relative;
     top: 90px;
     background-color: aqua;
@@ -124,21 +133,50 @@ body::after {
       align-items: center;
       width: 100%;
       height: max-content;
-      padding-left: 14px;
     }
     &__text span {
       color: $mainColor;
       width: 100%;
       height: 100%;
+      padding-left: 5%;
+      overflow-wrap: break-word;
+    }
+    &__img {
+      background-color: aquamarine;
+      height: 50%;
+      margin: 5% 5% 0% 5%
+    }
+    .tet{
+      margin: 0% 5% 0% 5%;
+      overflow-wrap: break-word;
     }
   }
+}
+.tet_right span {
+  margin: 0% 5% 0% 5%;
+}
+.tet_right {
+  display: flex;
+  justify-content: space-between;
+}
+.square span {
+  margin: 0% 0% 0% 5%;
+  color: transparent;
+  width: 10px;
+  height: 10px;
+  border: 1px solid black;
+}
+hr {
+  border: none;
+  height: 2px;
+  background-color: black;
+  margin: 3% 5% 0% 5%
 }
 .right {
   background-color: tomato;
   grid-area: 1 / 17 / 1 / 25;
 
   &__window {
-    display: flex;
     position: relative;
     top: 90px;
     background-color: violet;
@@ -152,12 +190,12 @@ body::after {
       align-items: center;
       width: 100%;
       height: max-content;
-      padding-left: 14px;
     }
     &__text span {
       color: $mainColor;
       width: 100%;
       height: 100%;
+      padding-left: 5%;
     }
   }
 }

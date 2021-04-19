@@ -46,17 +46,56 @@ body::after {
 
 .wrap {
   display: grid;
-  grid-template: 50px 700px 50px/repeat(24, 1fr);
+  grid-template: 50px 700px 50px/repeat(26, 1fr);
+}
+
+header {
+  display: grid;
+  background-color: azure;
+  grid-area: 1/2/1/26;
+  grid-template-columns: inherit;
+}
+
+nav {
+  grid-area: 1/1/1/26;
+  background-image: linear-gradient(90deg, #b4af9a, #b4af9a 10px, transparent 10px, transparent 15.5px, #b4af9a 15.5px, #b4af9a 18px, transparent 18px);
+}
+
+main {
+  background-color: black;
+  grid-area: 2/2/2/26;
+  display: grid;
+  grid-template-columns: inherit;
+  grid-template-rows: 90px 1fr;
+  grid-auto-flow: column;
+}
+
+footer {
+  background-image: linear-gradient(90deg, #b4af9a, #b4af9a 10px, transparent 10px, transparent 15.5px, #b4af9a 15.5px, #b4af9a 18px, transparent 18px);
+  background-color: brown;
+  grid-area: 3/2/3/26;
+}
+
+.left__text1 {
+  text-transform: uppercase;
+  text-shadow: 5px 4px 0px rgba(72, 70, 61, 0.25);
+  letter-spacing: 6px;
+  grid-area: 1/1/1/27;
+  color: white;
+  background-color: purple;
+  font-family: robin_pro_db;
+  font-size: 45px;
 }
 
 .left {
   background-color: bisque;
-  grid-area: 1/1/1/9;
+  grid-area: 2/1/2/9;
 }
 .left__text {
   text-transform: uppercase;
   text-shadow: 5px 4px 0px rgba(72, 70, 61, 0.25);
   letter-spacing: 6px;
+  display: none;
   font-family: robin_pro_db;
   font-size: 45px;
 }
@@ -89,12 +128,13 @@ body::after {
 
 .center {
   background-color: yellow;
-  grid-area: 1/9/1/17;
+  grid-area: 2/10/2/18;
+  display: flex;
+  align-items: center;
   /* align-self: center;  выключить relative  у window*/
 }
 .center__window {
   position: relative;
-  top: 90px;
   background-color: aqua;
   height: 65%;
   width: 100%;
@@ -135,11 +175,16 @@ body::after {
   justify-content: space-between;
 }
 
-.square span {
-  margin: 0% 0% 0% 5%;
-  color: transparent;
-  width: 10px;
-  height: 10px;
+.square {
+  display: flex;
+  margin: 3% 5% 0% 5%;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.square div {
+  width: 14px;
+  height: 14px;
   border: 1px solid black;
 }
 
@@ -152,7 +197,7 @@ hr {
 
 .right {
   background-color: tomato;
-  grid-area: 1/17/1/25;
+  grid-area: 2/19/2/27;
 }
 .right__window {
   position: relative;
@@ -178,39 +223,12 @@ hr {
   padding-left: 5%;
 }
 
-header {
-  display: grid;
-  background-color: azure;
-  grid-area: 1/2/1/24;
-  grid-template-columns: inherit;
-  background-image: linear-gradient(90deg, #b4af9a, #b4af9a 10px, transparent 10px, transparent 15.5px, #b4af9a 15.5px, #b4af9a 18px, transparent 18px);
-}
-
-nav {
-  margin-left: 20px;
-  grid-area: 1/1/1/25;
-}
-
 .button__group {
   display: flex;
   align-items: center;
   justify-content: space-around;
   height: 100%;
   width: 100%;
-}
-
-footer {
-  background-image: linear-gradient(90deg, #b4af9a, #b4af9a 10px, transparent 10px, transparent 15.5px, #b4af9a 15.5px, #b4af9a 18px, transparent 18px);
-  background-color: brown;
-  grid-area: 3/2/3/24;
-}
-
-main {
-  background-color: black;
-  grid-area: 2/2/2/24;
-  display: grid;
-  grid-template-columns: inherit;
-  grid-auto-flow: column;
 }
 
 /* button */

@@ -1,0 +1,230 @@
+@import url("fonts.css");
+
+$bgColor: #101424;
+$textColor: #f5f0e6;
+
+body {
+  background-color: $bgColor;
+  margin: 0;
+}
+.wrap {
+  display: grid;
+  grid: 360px 400px / repeat(25, 1fr);
+}
+header {
+  display: grid;
+  grid-template-columns: inherit;
+  grid-area: 1 / 1 / 1 / 26;
+}
+main {
+  display: grid;
+  grid-template-columns: inherit;
+  grid-area: 2 / 1 / 2 / 26;
+}
+
+main,
+header,
+#particles-js {
+  animation: wrapperappear 1s ease 20s 1 normal forwards;
+  opacity: 0;
+}
+
+@keyframes wrapperappear {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+#particles-js {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-image: url("");
+  background-size: cover;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+}
+
+.loading {
+  color: $textColor;
+  font-family: robin_pro_db;
+  position: relative;
+  grid-area: 1 / 1 / 3 / 26;
+  background-color: #1c1b17;
+  z-index: 1; // временно, наверное
+  background-size: 6px 6px;
+  background-image: linear-gradient(#0c0f20 2px, transparent 2px),
+    linear-gradient(90deg, #0c0f20 2px, transparent 2px);
+  animation: loadingvisibility 0.5s ease-in-out 18.5s normal forwards;
+
+  &__header {
+    display: flex;
+    align-items: flex-end;
+    text-transform: uppercase;
+    width: 100%;
+    height: 115px;
+
+    &__text {
+      align-items: baseline;
+      letter-spacing: 4px;
+
+      &__load {
+        font-size: 40px;
+        margin-left: 80px;
+      }
+      &__boot {
+        font-size: 20px;
+
+        &::after {
+          animation: dotty steps(1, end) 1s infinite;
+          content: "";
+        }
+      }
+    }
+    @keyframes dotty {
+      0% {
+        content: "";
+      }
+      25% {
+        content: ".";
+      }
+      50% {
+        content: "..";
+      }
+      75% {
+        content: "...";
+      }
+      100% {
+        content: "";
+      }
+    }
+  }
+  &__main {
+    letter-spacing: 2px;
+    color: white;
+    line-height: 32px;
+    margin-left: 100px;
+
+    & span {
+      animation: textblink 1s step-end infinite;
+      opacity: 0;
+    }
+  }
+  &__img {
+    position: absolute;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+
+    & img {
+      opacity: 0.2;
+      width: 50%;
+      height: 50%;
+    }
+  }
+}
+@keyframes loadingvisibility {
+  0% {
+    visibility: visible;
+    opacity: 1;
+  }
+  100% {
+    visibility: hidden;
+    opacity: 0;
+  }
+}
+
+@keyframes textblink {
+  50% {
+    opacity: 1;
+  }
+}
+
+.starfield {
+  grid-area: 1/1/1/26;
+  width: 100%;
+  height: 360px;
+}
+.logo {
+  grid-area: 1 / 1 / 1 / 26;
+  display: flex;
+  place-self: self-end center;
+  flex-direction: column;
+  align-items: center;
+  opacity: 0.95;
+  width: 100%;
+}
+.logo:after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 0) 0%,
+    white 10%,
+    white 90%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  transform: translateY(-2px);
+}
+.logo img {
+  width: 960px;
+  max-width: calc(100% - 10vw);
+}
+.button-group {
+  grid-area: 1 / 1 / 1 / 26;
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+  align-items: center;
+
+  & form {
+    display: contents;
+  }
+  & .button {
+    margin-bottom: 30px;
+  }
+}
+.button {
+  font-size: 24px;
+  color: #f3eddc;
+  border: none;
+  background: none;
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+  width: 300px;
+  position: relative;
+  transition: border-color 0.2s ease-in-out;
+}
+.button:before,
+.button:after {
+  content: "";
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  position: absolute;
+  bottom: -4px;
+  left: -12px;
+  background: transparent;
+  transition: background 0.2s ease-in-out;
+}
+.button:after {
+  left: auto;
+  right: -12px;
+}
+.button:hover {
+  border-color: #f3eddc;
+}
+.button:hover:before,
+.button:hover:after {
+  background-color: #f3eddc;
+}
+.button:active,
+.button:focus {
+  outline: 0;
+}

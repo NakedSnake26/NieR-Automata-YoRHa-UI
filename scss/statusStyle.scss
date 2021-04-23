@@ -64,9 +64,11 @@ header {
   grid-area: 1 / 2 / 1 / 26;
   grid-template-columns: inherit;
 }
+
 nav {
   // margin-left: 20px;
-  grid-area: 1 / 1 / 1 / 26;
+  grid-area: 1 / 1 / 1 / 27;
+  align-self: flex-end;
   background-image: linear-gradient(
     90deg,
     /* rgba(77, 73, 62, 0.2) */ $circleColor,
@@ -78,12 +80,18 @@ nav {
     transparent 18px
   );
 }
+.button__group {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-left: 40px;
+}
 main {
   background-color: black;
   grid-area: 2 / 2 / 2 / 26;
   display: grid;
   grid-template-columns: inherit;
-  grid-template-rows: 90px 1fr;
+  grid-template-rows: 85px 1fr;
   grid-auto-flow: column;
 }
 footer {
@@ -100,35 +108,39 @@ footer {
   background-color: brown;
   grid-area: 3 / 2 / 3 / 26;
 }
-.left__text1 {
+.button__group .button {
+  width: 153px;
+  height: 33px;
+}
+.title {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-end;
   text-transform: uppercase;
   text-shadow: 5px 4px 0px rgb(72 70 61 / 25%);
-  letter-spacing: 6px;
+  letter-spacing: 4px;
   grid-area: 1/1/1/27;
   color: white;
   background-color: purple;
   // display: none;
   font-family: robin_pro_db;
-  font-size: 45px;
+  font-size: 32px;
+}
+.title span {
+  position: relative;
+  margin-left: 5px;
 }
 .left {
   background-color: bisque;
   grid-area: 2 / 1 / 2 / 9;
 
-  &__text {
-    text-transform: uppercase;
-    text-shadow: 5px 4px 0px rgb(72 70 61 / 25%);
-    letter-spacing: 6px;
-    display: none;
-    font-family: robin_pro_db;
-    font-size: 45px;
-  }
   &__window {
     display: flex;
-    top: 70px;
+    position: relative;
     background-color: aqua;
     // position: relative;
-    height: 65%;
+    margin-top: 50px;
+    height: 386px; //65%
     width: 100%;
     background-image: linear-gradient(
       90deg,
@@ -142,7 +154,7 @@ footer {
     );
     &__section {
       width: 100%;
-      margin: 0% 0% 0% 10%;
+      margin: 0% 0% 0% 40px;
       background-color: chocolate;
 
       &__buttons {
@@ -170,18 +182,15 @@ footer {
 .center {
   background-color: yellow;
   grid-area: 2 / 10 / 2 / 18;
-  display: flex;
-  align-items: center;
-  /* align-self: center;  выключить relative  у window*/
 
   &__window {
     position: relative;
-    // top: 90px;
+    margin-top: 50px;
     background-color: aqua;
-    height: 65%;
+    height: 386px; //65%
     width: 100%;
 
-    &__text {
+    &__title {
       background-color: $textColor;
       display: flex;
       justify-content: flex-start;
@@ -189,7 +198,7 @@ footer {
       width: 100%;
       height: max-content;
     }
-    &__text span {
+    &__title span {
       color: $mainColor;
       width: 100%;
       height: 100%;
@@ -207,24 +216,6 @@ footer {
     }
   }
 }
-.tet_right span {
-  margin: 0% 5% 0% 5%;
-}
-.tet_right {
-  display: flex;
-  justify-content: space-between;
-}
-.square {
-  display: flex;
-  margin: 3% 5% 0% 5%;
-  flex-direction: row;
-  justify-content: space-between;
-}
-.square div {
-  width: 14px;
-  height: 14px;
-  border: 1px solid black;
-}
 hr {
   border: none;
   height: 2px;
@@ -237,12 +228,12 @@ hr {
 
   &__window {
     position: relative;
-    top: 90px;
     background-color: violet;
-    height: 65%;
+    height: 386px;
+    margin-top: 50px;
     width: 100%;
 
-    &__text {
+    &__title {
       background-color: $textColor;
       display: flex;
       justify-content: flex-start;
@@ -250,22 +241,36 @@ hr {
       width: 100%;
       height: max-content;
     }
-    &__text span {
+    &__title span {
       color: $mainColor;
       width: 100%;
       height: 100%;
       padding-left: 5%;
     }
+    &__specif {
+      display: flex;
+      justify-content: space-between;
+
+      & span {
+        margin: 0% 5% 0% 5%;
+      }
+    }
+    &__square {
+      display: flex;
+      margin: 3% 5% 0% 5%;
+      flex-direction: row;
+      justify-content: space-between;
+
+      & div {
+        width: 14px;
+        height: 14px;
+        border: 1px solid black;
+      }
+    }
   }
 }
 
-.button__group {
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-  height: 100%;
-  width: 100%;
-}
+
 
 /* button */
 .button {
@@ -278,7 +283,7 @@ hr {
     $buttonHover 50%,
     $buttonHover 100%
   );
-  background-size: 201%;
+  background-size: 200%;
   color: $textColor;
   border: none;
   padding: 8px 8px 7px;
@@ -317,7 +322,7 @@ hr {
     margin: auto;
     width: 40px;
     height: 20px;
-    background: url("../img/nier-pointer.svg") no-repeat;
+    background: url("../img/nier-pointerT.svg") no-repeat;
     background-size: contain;
     opacity: 0;
     transition: opacity 0.15s ease-in-out;

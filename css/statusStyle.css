@@ -26,7 +26,7 @@ body::before {
   background: url(../img/nier-border.svg) repeat-x;
   background-size: contain;
   bottom: auto;
-  top: 30px;
+  top: 60px;
 }
 
 body::after {
@@ -65,8 +65,7 @@ body::after {
   text-shadow: 5px 4px 0px rgba(72, 70, 61, 0.25);
   letter-spacing: 4px;
   grid-area: 1/1/1/27;
-  color: white;
-  background-color: purple;
+  color: #4e4b42;
   font-family: robin_pro_db;
   font-size: 40px;
 }
@@ -81,13 +80,11 @@ body::after {
   justify-content: space-between;
 }
 .wrap__block__left {
-  background-color: bisque;
   width: 401px;
 }
 .wrap__block__left__window {
   display: flex;
   position: relative;
-  background-color: aqua;
   height: 482px;
   width: 100%;
   background-image: linear-gradient(90deg, #b4af9a, #b4af9a 10px, transparent 10px, transparent 15.5px, #b4af9a 15.5px, #b4af9a 18px, transparent 18px);
@@ -95,9 +92,9 @@ body::after {
 .wrap__block__left__window__section {
   width: 100%;
   margin: 0% 0% 0% 40px;
-  background-color: chocolate;
+  background-color: #dad4ba;
   display: flex;
-  overflow: scroll;
+  overflow-y: scroll;
 }
 .wrap__block__left__window__section__buttons .button {
   margin-bottom: 5px;
@@ -109,12 +106,11 @@ body::after {
   margin-top: 10px;
 }
 .wrap__block__center {
-  background-color: yellow;
   width: 421px;
 }
 .wrap__block__center__window {
   position: relative;
-  background-color: aqua;
+  background-color: #dad4ba;
   height: 482px;
   width: 100%;
 }
@@ -136,7 +132,7 @@ body::after {
   overflow-wrap: break-word;
 }
 .wrap__block__center__window__img {
-  background-color: aquamarine;
+  background-color: #4e4b42;
   height: 50%;
   margin: 5% 5% 0% 5%;
 }
@@ -145,14 +141,13 @@ body::after {
   overflow-wrap: break-word;
 }
 .wrap__block__right {
-  background-color: tomato;
   width: 401px;
 }
 .wrap__block__right__window {
   display: flex;
   flex-direction: column;
   position: relative;
-  background-color: violet;
+  background-color: #dad4ba;
   height: 482px;
   width: 100%;
 }
@@ -203,7 +198,6 @@ body::after {
 
 header {
   display: grid;
-  background-color: azure;
   grid-area: 1/2/1/26;
   grid-template-columns: repeat(24, 1fr);
 }
@@ -215,7 +209,6 @@ nav {
 }
 
 main {
-  background-color: black;
   grid-area: 2/2/2/26;
   display: grid;
   grid-template-columns: repeat(24, 1fr);
@@ -224,8 +217,6 @@ main {
 }
 
 footer {
-  background-image: linear-gradient(90deg, #b4af9a, #b4af9a 10px, transparent 10px, transparent 15.5px, #b4af9a 15.5px, #b4af9a 18px, transparent 18px);
-  background-color: brown;
   grid-area: 3/2/3/26;
 }
 

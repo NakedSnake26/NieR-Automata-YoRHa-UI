@@ -39,7 +39,7 @@ body::before {
   background: url(../img/nier-border.svg) repeat-x;
   background-size: contain;
   bottom: auto;
-  top: 30px;
+  top: 60px;
 }
 body::after {
   content: "";
@@ -77,8 +77,8 @@ body::after {
     text-shadow: 5px 4px 0px rgb(72 70 61 / 25%);
     letter-spacing: 4px;
     grid-area: 1/1/1/27;
-    color: white;
-    background-color: purple;
+    color: $textColor;
+    // background-color: purple;
     // display: none;
     font-family: robin_pro_db;
     font-size: 40px; //32px
@@ -96,14 +96,14 @@ body::after {
     justify-content: space-between;
 
     &__left {
-      background-color: bisque;
+      // background-color: bisque;
       //grid-area: 2 / 1 / 2 / 9;
       width: 401px;
 
       &__window {
         display: flex;
         position: relative;
-        background-color: aqua;
+        // background-color: aqua;
         // position: relative;
         // margin-top: 50px;
         height: 482px; //65%, 386px
@@ -121,9 +121,9 @@ body::after {
         &__section {
           width: 100%;
           margin: 0% 0% 0% 40px;
-          background-color: chocolate;
+          background-color: $inMainBlockColor;
           display: flex;
-          overflow: scroll;
+          overflow-y: scroll;
 
           &__buttons {
            // display: flex;
@@ -150,14 +150,14 @@ body::after {
       }
     }
     &__center {
-      background-color: yellow;
+      // background-color: yellow;
       //grid-area: 2 / 10 / 2 / 18;
       width: 421px;
 
       &__window {
         position: relative;
         // margin-top: 50px;
-        background-color: aqua;
+        background-color: $inMainBlockColor;
         height: 482px; //65%, 386px
         width: 100%;
 
@@ -177,7 +177,7 @@ body::after {
           }
         }
         &__img {
-          background-color: aquamarine;
+          background-color: $textColor;
           height: 50%;
           margin: 5% 5% 0% 5%;
         }
@@ -188,7 +188,7 @@ body::after {
       }
     }
     &__right {
-      background-color: tomato;
+      // background-color: tomato;
       // grid-area: 2 / 19 / 2 / 27;
       width: 401px;
 
@@ -196,7 +196,7 @@ body::after {
         display: flex;
         flex-direction: column;
         position: relative;
-        background-color: violet;
+        background-color: $inMainBlockColor;
         height: 482px; //65%, 386px
         //margin-top: 50px;
         width: 100%;
@@ -251,7 +251,7 @@ body::after {
 }
 header {
   display: grid;
-  background-color: azure;
+  // background-color: azure;
   grid-area: 1 / 2 / 1 / 26;
   grid-template-columns: repeat(24, 1fr);
 }
@@ -272,7 +272,7 @@ nav {
   );
 }
 main {
-  background-color: black;
+  // background-color: black;
   grid-area: 2 / 2 / 2 / 26;
   display: grid;
   grid-template-columns: repeat(24, 1fr);
@@ -280,17 +280,8 @@ main {
   grid-auto-flow: column;
 }
 footer {
-  background-image: linear-gradient(
-    90deg,
-    /* rgba(77, 73, 62, 0.2) */ $circleColor,
-    /* rgba(77, 73, 62, 0.2) */ $circleColor 10px,
-    transparent 10px,
-    transparent 15.5px,
-    /* rgba(77, 73, 62, 0.2) */ $circleColor 15.5px,
-    /* rgba(77, 73, 62, 0.2) */ $circleColor 18px,
-    transparent 18px
-  );
-  background-color: brown;
+
+  // background-color: brown;
   grid-area: 3 / 2 / 3 / 26;
 }
 hr {
@@ -437,6 +428,7 @@ hr {
   animation: leftLine 18s ease-in-out infinite;
 }
 
+
 @keyframes bigCircle {
   0% {
     transform: translateX(-10px) translateY(-10px);
@@ -508,3 +500,4 @@ hr {
 }
 
 /* End media */
+

@@ -43,21 +43,23 @@ body::after {
   bottom: 30px;
 }
 
-.wrap {
+.container {
   display: grid;
   grid-template: 50px 650px 50px/repeat(26, 1fr);
 }
-.wrap__button-group {
+
+.container__button-group {
   display: flex;
   align-items: center;
   justify-content: space-between;
   margin-left: 40px;
 }
-.wrap__button-group .button {
+.container__button-group .button {
   width: 153px;
   height: 33px;
 }
-.wrap__title {
+
+.container__title {
   display: flex;
   justify-content: flex-start;
   align-items: flex-end;
@@ -69,52 +71,58 @@ body::after {
   font-family: robin_pro_db;
   font-size: 40px;
 }
-.wrap__title span {
+
+.container__text {
   position: relative;
   margin-left: 5px;
 }
-.wrap__block {
+
+.container__block {
   grid-area: 2/1/2/25;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
 }
-.wrap__block__left {
+
+.container__left {
   width: 401px;
 }
-.wrap__block__left__window {
+
+.window-left {
   display: flex;
   position: relative;
   height: 482px;
   width: 100%;
   background-image: linear-gradient(90deg, #b4af9a, #b4af9a 10px, transparent 10px, transparent 15.5px, #b4af9a 15.5px, #b4af9a 18px, transparent 18px);
 }
-.wrap__block__left__window__section {
+.window-left__section {
   width: 100%;
   margin: 0% 0% 0% 40px;
   background-color: #dad4ba;
   display: flex;
   overflow-y: scroll;
 }
-.wrap__block__left__window__section__buttons .button {
+.window-left__buttons .button {
   margin-bottom: 5px;
   width: 95%;
   background: linear-gradient(90deg, transparent 0%, transparent 50%, #635f54 50%, #635f54 100%);
   background-size: 200%;
 }
-.wrap__block__left__window__section__buttons .button:first-child {
+.window-left__buttons .button:first-child {
   margin-top: 10px;
 }
-.wrap__block__center {
+
+.container__center {
   width: 421px;
 }
-.wrap__block__center__window {
+
+.window-center {
   position: relative;
   background-color: #dad4ba;
   height: 482px;
   width: 100%;
 }
-.wrap__block__center__window__title {
+.window-center__title {
   background-color: #4e4b42;
   display: flex;
   justify-content: flex-start;
@@ -124,26 +132,28 @@ body::after {
   height: -moz-max-content;
   height: max-content;
 }
-.wrap__block__center__window__title span {
+.window-center__text {
   color: #cdc8b0;
   width: 100%;
   height: 100%;
   padding-left: 5%;
   overflow-wrap: break-word;
 }
-.wrap__block__center__window__img {
+.window-center__img {
   background-color: #4e4b42;
   height: 50%;
   margin: 5% 5% 0% 5%;
 }
-.wrap__block__center__window__description {
+.window-center__description {
   margin: 0% 5% 0% 5%;
   overflow-wrap: break-word;
 }
-.wrap__block__right {
+
+.container__right {
   width: 401px;
 }
-.wrap__block__right__window {
+
+.window-right {
   display: flex;
   flex-direction: column;
   position: relative;
@@ -151,7 +161,7 @@ body::after {
   height: 482px;
   width: 100%;
 }
-.wrap__block__right__window__title {
+.window-right__title {
   background-color: #4e4b42;
   display: flex;
   justify-content: flex-start;
@@ -161,32 +171,32 @@ body::after {
   height: -moz-max-content;
   height: max-content;
 }
-.wrap__block__right__window__title span {
+.window-right__text {
   color: #cdc8b0;
   width: 100%;
   height: 100%;
   padding-left: 5%;
   overflow-wrap: break-word;
 }
-.wrap__block__right__window__specif {
+.window-right__specif {
   display: flex;
   justify-content: space-between;
 }
-.wrap__block__right__window__specif span {
+.window-right__specif span {
   margin: 0% 5% 0% 5%;
 }
-.wrap__block__right__window__square {
+.window-right__square {
   display: flex;
   margin: 3% 5% 3% 5%;
   flex-direction: row;
   justify-content: space-between;
 }
-.wrap__block__right__window__square div {
+.window-right__square div {
   width: 14px;
   height: 14px;
   border: 1px solid black;
 }
-.wrap__block__right__window__status {
+.window-right__status {
   text-transform: uppercase;
   width: 100%;
   height: 100%;

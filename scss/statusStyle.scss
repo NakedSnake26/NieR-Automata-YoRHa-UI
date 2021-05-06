@@ -54,201 +54,199 @@ body::after {
   top: auto;
   bottom: 30px;
 }
-.wrap {
+.container {
   display: grid;
   grid-template: 50px 650px 50px / repeat(26, 1fr);
+}
 
-  &__button-group {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-left: 40px;
+.container__button-group { //изменить
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-left: 40px;
 
-    & .button {
-      width: 153px;
-      height: 33px;
-    }
+  & .button {
+    width: 153px;
+    height: 33px;
   }
+}
+
+.container__title {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-end;
+  text-transform: uppercase;
+  text-shadow: 5px 4px 0px rgb(72 70 61 / 25%);
+  letter-spacing: 4px;
+  grid-area: 1/1/1/27;
+  color: $textColor;
+  // background-color: purple;
+  // display: none;
+  font-family: robin_pro_db;
+  font-size: 40px; //32px
+  //height: 135%;
+}
+.container__text {
+  position: relative;
+  margin-left: 5px;
+}
+
+.container__block {
+  grid-area: 2 / 1 / 2 / 25;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.container__left {
+  // background-color: bisque;
+  //grid-area: 2 / 1 / 2 / 9;
+  width: 401px;
+}
+.window-left { //изменить
+  display: flex;
+  position: relative;
+  // background-color: aqua;
+  // position: relative;
+  // margin-top: 50px;
+  height: 482px; //65%, 386px
+  width: 100%;
+  background-image: linear-gradient(
+    90deg,
+    /* rgba(77, 73, 62, 0.2) */ $circleColor,
+    /* rgba(77, 73, 62, 0.2) */ $circleColor 10px,
+    transparent 10px,
+    transparent 15.5px,
+    /* rgba(77, 73, 62, 0.2) */ $circleColor 15.5px,
+    /* rgba(77, 73, 62, 0.2) */ $circleColor 18px,
+    transparent 18px
+  );
+  &__section {
+    width: 100%;
+    margin: 0% 0% 0% 40px;
+    background-color: $inMainBlockColor;
+    display: flex;
+    overflow-y: scroll;
+
+  }
+  &__buttons {
+    // display: flex;
+     //flex-direction: column;
+
+     & .button {
+       margin-bottom: 5px;
+       width: 95%;
+       background: linear-gradient(
+         90deg,
+         /* rgba(72, 70, 61, 0.25) */ transparent 0%,
+         /* rgba(72, 70, 61, 0.25) */ transparent 50%,
+         $buttonHover 50%,
+         $buttonHover 100%
+       );
+       background-size: 200%;
+     }
+     & .button:first-child {
+       margin-top: 10px;
+     }
+   }
+}
+.container__center {
+  // background-color: yellow;
+  //grid-area: 2 / 10 / 2 / 18;
+  width: 421px;
+}
+.window-center {
+  position: relative;
+  // margin-top: 50px;
+  background-color: $inMainBlockColor;
+  height: 482px; //65%, 386px
+  width: 100%;
+
   &__title {
+    background-color: $textColor;
     display: flex;
     justify-content: flex-start;
-    align-items: flex-end;
-    text-transform: uppercase;
-    text-shadow: 5px 4px 0px rgb(72 70 61 / 25%);
-    letter-spacing: 4px;
-    grid-area: 1/1/1/27;
-    color: $textColor;
-    // background-color: purple;
-    // display: none;
-    font-family: robin_pro_db;
-    font-size: 40px; //32px
-    //height: 135%;
+    align-items: center;
+    width: 100%;
+    height: max-content;
+  }
+  &__text {
+    color: $mainColor;
+    width: 100%;
+    height: 100%;
+    padding-left: 5%;
+    overflow-wrap: break-word;
+  }
+  &__img {
+    background-color: $textColor;
+    height: 50%;
+    margin: 5% 5% 0% 5%;
+  }
+  &__description {
+    margin: 0% 5% 0% 5%;
+    overflow-wrap: break-word;
+  }
+}
+.container__right {
+  // background-color: tomato;
+  // grid-area: 2 / 19 / 2 / 27;
+  width: 401px;
+}
+.window-right {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  background-color: $inMainBlockColor;
+  height: 482px; //65%, 386px
+  //margin-top: 50px;
+  width: 100%;
+
+  &__title {
+    background-color: $textColor;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    height: max-content;
+  }
+  &__text {
+    color: $mainColor;
+    width: 100%;
+    height: 100%;
+    padding-left: 5%;
+    overflow-wrap: break-word;
+  }
+  &__specif {
+    display: flex;
+    justify-content: space-between;
 
     & span {
-      position: relative;
-      margin-left: 5px;
+      margin: 0% 5% 0% 5%;
     }
   }
-  &__block {
-    grid-area: 2 / 1 / 2 / 25;
+  &__square {
     display: flex;
+    margin: 3% 5% 3% 5%;
     flex-direction: row;
     justify-content: space-between;
 
-    &__left {
-      // background-color: bisque;
-      //grid-area: 2 / 1 / 2 / 9;
-      width: 401px;
-
-      &__window {
-        display: flex;
-        position: relative;
-        // background-color: aqua;
-        // position: relative;
-        // margin-top: 50px;
-        height: 482px; //65%, 386px
-        width: 100%;
-        background-image: linear-gradient(
-          90deg,
-          /* rgba(77, 73, 62, 0.2) */ $circleColor,
-          /* rgba(77, 73, 62, 0.2) */ $circleColor 10px,
-          transparent 10px,
-          transparent 15.5px,
-          /* rgba(77, 73, 62, 0.2) */ $circleColor 15.5px,
-          /* rgba(77, 73, 62, 0.2) */ $circleColor 18px,
-          transparent 18px
-        );
-        &__section {
-          width: 100%;
-          margin: 0% 0% 0% 40px;
-          background-color: $inMainBlockColor;
-          display: flex;
-          overflow-y: scroll;
-
-          &__buttons {
-           // display: flex;
-            //flex-direction: column;
-
-            & .button {
-              margin-bottom: 5px;
-              width: 95%;
-              background: linear-gradient(
-                90deg,
-                /* rgba(72, 70, 61, 0.25) */ transparent 0%,
-                /* rgba(72, 70, 61, 0.25) */ transparent 50%,
-                $buttonHover 50%,
-                $buttonHover 100%
-              );
-              background-size: 200%;
-            }
-            & .button:first-child {
-              margin-top: 10px;
-            }
-          }
-
-        }
-      }
-    }
-    &__center {
-      // background-color: yellow;
-      //grid-area: 2 / 10 / 2 / 18;
-      width: 421px;
-
-      &__window {
-        position: relative;
-        // margin-top: 50px;
-        background-color: $inMainBlockColor;
-        height: 482px; //65%, 386px
-        width: 100%;
-
-        &__title {
-          background-color: $textColor;
-          display: flex;
-          justify-content: flex-start;
-          align-items: center;
-          width: 100%;
-          height: max-content;
-          & span {
-            color: $mainColor;
-            width: 100%;
-            height: 100%;
-            padding-left: 5%;
-            overflow-wrap: break-word;
-          }
-        }
-        &__img {
-          background-color: $textColor;
-          height: 50%;
-          margin: 5% 5% 0% 5%;
-        }
-        &__description {
-          margin: 0% 5% 0% 5%;
-          overflow-wrap: break-word;
-        }
-      }
-    }
-    &__right {
-      // background-color: tomato;
-      // grid-area: 2 / 19 / 2 / 27;
-      width: 401px;
-
-      &__window {
-        display: flex;
-        flex-direction: column;
-        position: relative;
-        background-color: $inMainBlockColor;
-        height: 482px; //65%, 386px
-        //margin-top: 50px;
-        width: 100%;
-
-        &__title {
-          background-color: $textColor;
-          display: flex;
-          justify-content: flex-start;
-          align-items: center;
-          width: 100%;
-          height: max-content;
-          & span {
-            color: $mainColor;
-            width: 100%;
-            height: 100%;
-            padding-left: 5%;
-            overflow-wrap: break-word;
-          }
-        }
-        &__specif {
-          display: flex;
-          justify-content: space-between;
-
-          & span {
-            margin: 0% 5% 0% 5%;
-          }
-        }
-        &__square {
-          display: flex;
-          margin: 3% 5% 3% 5%;
-          flex-direction: row;
-          justify-content: space-between;
-
-          & div {
-            width: 14px;
-            height: 14px;
-            border: 1px solid black;
-          }
-        }
-        &__status {
-          text-transform: uppercase;
-          width: 100%;
-          height: 100%;
-          font-size: 14px;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-        }
-      }
+    & div {
+      width: 14px;
+      height: 14px;
+      border: 1px solid black;
     }
   }
+  &__status {
+    text-transform: uppercase;
+    width: 100%;
+    height: 100%;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 }
+
 header {
   display: grid;
   // background-color: azure;
